@@ -22,24 +22,30 @@ public class App  {
         List<WebElement> rows = driver.findElements(By.xpath("//table[@class='table_f']//tr[td//text()[contains(., '外資')]]"));
         WebElement row = rows.get(0); //台指期貨
         List<WebElement> cells = row.findElements(By.tagName("td"));
-        
+        //多方交易口數
         final Number LTradeVol = NumberFormat.getInstance().parse(cells.get(1).getText());
+        //多方交易金額
         final Number LTradeAmt = NumberFormat.getInstance().parse(cells.get(2).getText());
-        
-        
+        //空方交易口數
         final Number STradeVol = NumberFormat.getInstance().parse(cells.get(3).getText());
+        //空方交易金額
         final Number STradeAmt = NumberFormat.getInstance().parse(cells.get(4).getText());
-        
+        //多空淨額口數
         final Number DifTradeVol = NumberFormat.getInstance().parse(cells.get(5).getText());
+        //多空淨額金額
         final Number DifTradeAmt = NumberFormat.getInstance().parse(cells.get(6).getText());
         
+        //多方未平倉口數
         final Number LOIVol = NumberFormat.getInstance().parse(cells.get(7).getText());
+        //多方未平倉金額
         final Number LOIAmt = NumberFormat.getInstance().parse(cells.get(8).getText());
-        
+        //空方未平倉口數
         final Number SOIVol = NumberFormat.getInstance().parse(cells.get(9).getText());
+        //空方未平倉金額
         final Number SOIAmt = NumberFormat.getInstance().parse(cells.get(10).getText());
-        
+        //多空淨額口數
         final Number OIVol = NumberFormat.getInstance().parse(cells.get(11).getText());
+        //多空淨額金額
         final Number OIAmt = NumberFormat.getInstance().parse(cells.get(12).getText());
         
         System.out.println("OIVol:" + OIVol + " OIAmt:" + OIAmt);
